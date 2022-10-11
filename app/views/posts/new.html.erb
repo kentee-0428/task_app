@@ -1,0 +1,25 @@
+<h2>スケジュール新規作成</h2>
+<%= form_tag('/posts/create')do %>
+  <table>
+    <tbody>
+      <tr>
+        <th>タイトル</th><td><input name='title'></td>
+      </tr>
+      <tr>
+        <th>開始日</th><td></td>
+      </tr>
+      <tr>
+        <th>終了日</th><td></td>
+      </tr>
+      <tr>
+        <th>終日</th><td></td>
+      </tr>
+      <tr>
+        <th>スケジュールメモ</th><td><textarea name='content'></textarea></td>
+      </tr>
+    </tbody>
+  </ table>
+  <input type='submit' value='スケジュールを新規登録する'>
+<% end %>
+
+<%= link_to('スケジュール一覧表に戻る','/') %>

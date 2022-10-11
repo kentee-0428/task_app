@@ -1,0 +1,14 @@
+<h2>スケジュール詳細</h2>
+<%= "idは：#{@post.id}です" %>
+<table>
+  <tbody>
+    <th>タイトル</th><td></td>
+    <th>開始日</th><td></td>
+    <th>投稿日時</th><td></td>
+    <th>終日</th><td></td>
+    <th>スケジュールメモ</th><td></td>
+  </tbody>
+</ table>
+<%= link_to('スケジュール一覧に戻る','/') %>
+<%= link_to('スケジュールを編集する','/posts/#{post.id}/edit') %>
+<%= link_to('スケジュールを削除','/posts/#{post.id}/destroy') %>
