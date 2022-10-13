@@ -1,3 +1,74 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+// ------------------------全体------------------------------------
+
+a {
+  color: #9580ff;
+}
+
+h2 {
+  padding: 15px 15px 10px;
+  font-size: 23px;
+}
+
+.error-message {
+  color: red;
+}
+// ------テーブル-----------
+
+.table_container {
+  padding: 0 10px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+th, td {
+  border: solid 1px #726b99;
+  text-align: center;
+  padding: 3px 5px;
+}
+
+.new, .edit, .show {
+  margin: 0 auto;
+  width: 500px;
+}
+
+// ---------リンク要素--------
+.link {
+  padding-top: 15px;
+}
+// ---input,textarea--
+.edit_item {
+  width: 95%;
+  padding: 5px 10px;
+  margin: 3px;
+  display: inline-block;
+  font-size: 17px;
+}
+
+.box-item {
+  font-size: 10px;
+}
+
+.checkbox {
+  margin-top: 3px;
+}
+
+textarea {
+  max-width: 318.52px;
+  height: 125px;
+  resize: vertical;
+}
+
+.to_edit {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.to_posts {
+  padding-bottom: 15px;
+}
+// ------------------------全体------------------------------------
