@@ -1,0 +1,44 @@
+<div class="container">
+  <h2>スケジュール新規作成</h2>
+  <% @post.errors.full_messages.each do |message| %>
+    <div class="error-message">
+      <%= message %>
+    </div>
+  <% end %>
+  <div class="table_container">
+    <%= form_tag("/posts/create")do %>
+      <table class="new">
+        <tbody>
+          <tr>
+            <th>タイトル</th>
+            <td><input class="edit_item" name="title" value="<%= @post.title %>"></td>
+          </tr>
+          <tr>
+            <th>開始日</th>
+            <td><input class="edit_item" name="start_date" type="date" value="<%= @post.start_date %>"></td>
+          </tr>
+          <tr>
+            <th>終了日</th>
+            <td><input class="edit_item" name="end_date" type="date" value="<%= @post.end_date %>"></td>
+          </tr>
+          <tr>
+            <th>終日</th>
+            <td class="box-item">
+            <input class="checkbox" name="all_date" type="checkbox"><br>終日の場合はチェックを入れます
+            </td>
+          </tr>
+          <tr>
+            <th>スケジュールメモ</th>
+            <td><textarea class="edit_item" name="content"><%= @post.content %></textarea></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="link to_post">
+        <input type="submit" value="スケジュールを新規登録する">
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="link to_posts">
+  <%= link_to("スケジュール一覧表に戻る","/") %>
+</div>

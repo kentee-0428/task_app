@@ -1,0 +1,44 @@
+<div class="container">
+  <h2>スケジュール詳細</h2>
+  <div class="table_container">
+    <table class="show">
+      <tbody>
+        <tr>
+          <th>タイトル</th>
+          <td><%= @post.title %></td>
+        </tr>
+        <tr>
+          <th>開始日</th>
+          <td><%= @post.start_date.strftime("%Y年 %m月 %d日") %></td>
+        </tr>
+        <tr>
+          <th>投稿日時</th>
+          <td><%= @post.updated_at.to_s(:datetime_jp) %></td>
+        </tr>
+        <tr>
+          <th>終日</th>
+          <td>
+          <% if @post.all_date %>
+            <div class="all_date_item">○</div>
+          <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th>スケジュールメモ</th>
+          <td><%= @post.content %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="links">
+  <div class="link to_posts">
+    <%= link_to("スケジュール一覧に戻る","/") %>
+  </div>
+  <div class="link to_edit">
+    <%= link_to("スケジュールを編集する","/posts/#{@post.id}/edit") %>
+  </div>
+  <div class="link to_destroy">
+    <%= link_to("スケジュールを削除","/posts/#{@post.id}/destroy",{method:"post", data:{confirm:'削除してもいいですか？'}}) %>
+  </div>
+</div>

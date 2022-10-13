@@ -1,0 +1,42 @@
+<div class="container">
+  <h2>スケージュール編集</h2>
+  <% @post.errors.full_messages.each do |message| %>
+    <div class="error-message">
+      <%= message %>
+    </div>
+  <% end %>
+  <div class="table_container">
+    <%= form_tag("/posts/#{@post.id}/update")do %>
+      <table class="edit">
+        <tbody>
+          <tr>
+            <th>タイトル</th>
+            <td><input class="edit_item" name="title" value="<%= @post.title %>"></td>
+          </tr>
+          <tr>
+            <th>開始日</th>
+            <td><input class="edit_item" name="start_date" type="date" value="<%= @post.start_date %>" max=></td>
+          </tr>
+          <tr>
+            <th>終了日</th>
+            <td><input class="edit_item" name="end_date" type="date" value="<%= @post.end_date %>" min=></td>
+          </tr>
+          <tr>
+            <th>終日</th>
+            <td class="box-item"><input class="checkbox" name="all_date" type="checkbox"><br>終日の場合はチェックを入れます</td>
+          </tr>
+          <tr>
+            <th>スケジュールメモ</th>
+            <td><textarea class="edit_item" name="content"><%= @post.content %></textarea></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="link to_edit">
+        <input type="submit" value="スケジュールの編集を完了">
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="link to_posts">
+  <%= link_to('スケジュール一覧表に戻る','/') %>
+</div>

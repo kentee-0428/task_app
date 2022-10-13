@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TaskApp</title>
+    <title>スケジュール管理アプリ</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,22 @@
   </head>
 
   <body>
+    <header>
+      <h1>Ruby on Rails スケジュール管理アプリ</<h1>
+    </header>
+    <div class="notice">
+      <% if flash[:notice] %>
+        <%= flash[:notice] %>
+      <% end %>
+    </div>
+    <div class="alert">
+      <% if flash.now[:alert] %>
+        <%= flash.now[:alert] %>
+      <% end %>
+    </div>
     <%= yield %>
+    <footer>
+      <h1>現在の日時：<%= @today.strftime("%Y年%m月%d日") %>&emsp;スケジュール合計：<%= @posts.count %></<h1>
+    </footer>
   </body>
 </html>
